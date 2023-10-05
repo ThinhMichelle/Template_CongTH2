@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+
+	<AddIn Type="Application">
+		<Assembly>ConcreteLiningBeam.dll</Assembly>
+		<AddInId>0c22f060-3f15-421c-b6b8-ff9021d37423</AddInId>
+		<Name>ConcreteLiningBeam</Name>
+		<FullClassName>ConcreteLiningBeam.CreateRibbon</FullClassName>
+		<VendorId>ADSK</VendorId>
+		<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+	</AddIn>
+
+</RevitAddIns>

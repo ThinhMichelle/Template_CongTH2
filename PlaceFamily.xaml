@@ -1,0 +1,60 @@
+﻿<Window x:Class="ConcreteLiningBeam.PlaceFamily"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewmodel="clr-namespace:ConcreteLiningBeam.ViewModel" xmlns:concreteliningbeam="clr-namespace:ConcreteLiningBeam"
+        d:DataContext="{d:DesignInstance concreteliningbeam:PlaceFamilyViewModel}"
+             mc:Ignorable="d" 
+              Height="250" Width="400"
+ Name="MainWindow"
+ WindowStartupLocation="CenterScreen"
+ Topmost="True">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <GroupBox 
+          Grid.Row="0">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton IsChecked="{Binding IsSelect}"                               
+                      VerticalContentAlignment="Center"
+                      Width="200"
+                      Content="Select/SelectedElements"></RadioButton>
+
+                    <RadioButton IsChecked="{Binding AllElement}"                              
+                      VerticalContentAlignment="Center"
+                      Width="200"
+                      Content="All Elements In Project">
+                    </RadioButton>
+                </StackPanel>
+                <StackPanel Grid.Row="1">
+                    
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox 
+   Grid.Row="1">
+            <Grid>
+                <Button  Content="Run"
+Command="{Binding OkCommand}"
+CommandParameter="{Binding ElementName=MainWindow}"
+Background="Transparent"
+Width="80" Height="25"
+HorizontalAlignment="Right" Click="Button_Click"                        
+/>
+                <ComboBox Name="cbb_blockname" HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Width="100"
+                          ItemsSource="{Binding Collection,RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor},
+                    Mode=OneWay}" SelectionChanged="cbb_blockname_SelectionChanged">
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
