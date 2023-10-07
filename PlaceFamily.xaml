@@ -46,14 +46,23 @@ Command="{Binding OkCommand}"
 CommandParameter="{Binding ElementName=MainWindow}"
 Background="Transparent"
 Width="80" Height="25"
-HorizontalAlignment="Right" Click="Button_Click"                        
+HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Button_Click"                        
 />
-                <ComboBox Name="cbb_blockname" HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Width="100"
-                          ItemsSource="{Binding Collection,RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor},
-                    Mode=OneWay}" SelectionChanged="cbb_blockname_SelectionChanged">
-                </ComboBox>
+               
+                <GroupBox Height="100" Width="200" HorizontalAlignment="Right">
+                    <Grid>
+                        <ComboBox Name="cbb_blockname" HorizontalAlignment="Left"
+           VerticalAlignment="top" Margin="10"
+           Width="100"
+           ItemsSource="{Binding Collection,RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor},
+     Mode=OneWay}" SelectionChanged="cbb_blockname_SelectionChanged">
+                        </ComboBox>
+                        <Button x:Name="btn_selectFamily" Content="Select" HorizontalAlignment="Right"
+                               VerticalAlignment="Top" Height="20" Width="50" Margin="10" Click="btn_selectFamily_Click">
+
+                        </Button>
+                    </Grid>
+                </GroupBox>
             </Grid>
         </GroupBox>
     </Grid>

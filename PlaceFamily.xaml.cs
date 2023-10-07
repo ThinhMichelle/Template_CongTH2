@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -53,6 +55,13 @@ namespace ConcreteLiningBeam
         {
             ClsData_PlaceFamily.layer_block = cbb_blockname.SelectedItem.ToString();
             MessageBox.Show(ClsData_PlaceFamily.layer_block);
+        }
+
+        private void btn_selectFamily_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                ClsData_PlaceFamily.Family_name = openFileDialog.FileName;
         }
     }
     public class MyPrinter : INotifyPropertyChanged

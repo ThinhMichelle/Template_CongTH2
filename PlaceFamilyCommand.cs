@@ -19,7 +19,7 @@ namespace ConcreteLiningBeam
 
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-
+            ClsData_PlaceFamily.cmData = commandData;
             UIDocument uidoc = commandData.Application.ActiveUIDocument;
             Document doc = uidoc.Document;
             #region"select linkcad" 
@@ -71,10 +71,10 @@ namespace ConcreteLiningBeam
                                         {
                                             ClsData_PlaceFamily.lst_block_name.Add(Layer);
                                         ClsData_PlaceFamily.list_block.Add(gi_block);
+                                        
+                                        }
                                         ClsData_PlaceFamily.list_PointBlock.Add(origin);
-                                    }
-                                    
-                                   
+
                                 }
 
                                

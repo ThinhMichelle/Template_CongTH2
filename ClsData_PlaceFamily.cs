@@ -16,5 +16,7 @@ namespace ConcreteLiningBeam
         public static List<GeometryInstance> list_block = new List<GeometryInstance>();
         public static List<string> list_check = new List<string>();
         public static ExternalCommandData cmData;
+        public static string symbol = "Not exist"; 
+        public static string Family_name; 
     }
 }
